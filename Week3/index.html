@@ -9,10 +9,19 @@
     <script>
       function getAnimalData() {
         // alert("Check successful");
-        const response = fetch("https://fakerapi.it/api/v1/persons");
-        console.log(response);
+        fetch("https://fakerapi.it/api/v1/persons").then(function (response) {
+          response.json().then(function (finalData) {
+            console.log(finalData);
+          });
+        });
+      }
+      // Another way to handle the promise
+      async function getAnimalDataWithAsync() {
+        const response = await fetch("https://fakerapi.it/api/v1/persons");
+        const finalData = await response.json();
+        console.log(finalData);
       }
     </script>
-    <button onclick="getAnimalData()">Get Animal Data</button>
+    <button onclick="getAnimalDataWithAsync()">Get Animal Data</button>
   </body>
 </html>
