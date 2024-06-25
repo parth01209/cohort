@@ -69,3 +69,5 @@ app.get("/users", function (req, res) {
 });
 
 app.listen(3000); // Start the Express server on port 3000
+
+// In-memory data storage is bad because, if process ever crashes, every thing is lost. If more things are added, updates are lost
