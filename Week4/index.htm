@@ -1,0 +1,27 @@
+<html lang="en">
+  <script>
+    async function populateDiv() {
+      // alert("Button is clicked");
+      const element = document.getElementById("finalSum");
+      // console.log(element); // This prints <div id="finalSum"></div> on console. But it is not HTML, even tho it looks like. It is reference to that HTML element
+      // element.innerHTML = "Hello World"; // This will change the content of the div
+      const a = document.getElementById("firstNum").value; // Getting internal value of div with id = firstNum
+      const b = document.getElementById("secNum").value; // Getting internal value of div with id = secNum
+      // element.innerHTML = parseInt(a) + parseInt(b);
+      const res = await fetch(
+        "https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b
+      );
+      // console.log(res);
+      const finalRes = await res.text();
+      console.log(finalRes);
+      element.innerHTML = finalRes;
+    }
+  </script>
+
+  <body>
+    <input id="firstNum" type="text" placeholder="Input" /><br /><br />
+    <input id="secNum" type="text" placeholder="Input number 2" /><br /><br />
+    <button onclick="populateDiv()">Calculate me</button><br /><br />
+    <div id="finalSum"></div>
+  </body>
+</html>

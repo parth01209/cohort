@@ -1,0 +1,30 @@
+ReactJS is just easier way to write normal HTML/CSS/JS.
+Under the hood, everything gets converted into HTML/CSS/JS as browser dont know ReactJS
+
+DOM manipulation for complex websites is a bit tricky and lengthy.
+There were libraries prior to React that made it slightly easy, but still, it was not enough for very big app (JQuery)
+
+Eventually, Vue and React created new syntax for frontends
+React is more popular than Vue, but Vue is easier to learn and use
+React compiler transforms code to HTML/CSS/JS
+
+
+To create a react app, we usually need to worry about:
+1. State
+2. Components
+3. Re-rendering
+
+1. State - An object that represents the current state of the app
+           It represents dynamic things in your application. Ex - Value in counter button example.
+           Basically, we need to take into account only those things on our websites that changes
+
+2. Component - How a DOM element should render, given a state
+               It is a reusable, dynamic, HTML snippet that changes given the state
+               It is a function that returns HTML that changes given the state and is reusable and can be nested
+
+3. Re-rendering - Whenever backend tells that there is change in some state, dev will change the state, and React re-renders (changes the DOM element)
+                  A state change triggers a re-render.
+
+
+We usually define all the components once.
+Then all we have to do is update the state of app. React takes care of re-rendering

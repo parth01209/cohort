@@ -1,0 +1,27 @@
+<html>
+  <body>
+    <div id="buttonParent"></div>
+    <script>
+      let state = {
+        count: 0,
+      };
+
+      function onButtonPress() {
+        state.count++; // Update the state
+        buttonComponentReRender(); // Call the re-render
+      }
+
+      function buttonComponentReRender() {
+        document.getElementById("buttonParent").innerHTML = "";
+        const button = document.createElement("button");
+        console.log(button);
+        button.innerHTML = `Clicked ${state.count} times`;
+        button.setAttribute("onclick", "onButtonPress()");
+        document.getElementById("buttonParent").appendChild(button);
+      }
+      buttonComponentReRender(); // First component re-render
+    </script>
+  </body>
+</html>
+
+<!-- Part of taking the state, giving it to component, taking it back, removing things from DOM, and putting it back gets taken care ofr by React-->
